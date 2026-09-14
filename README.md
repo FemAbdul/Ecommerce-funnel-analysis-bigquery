@@ -2,7 +2,7 @@
 ---
 
 ## 📌 Executive Summary
-This project analyzes end-to-end user behavior across **4,200+ unique sessions** and **$76,000+ in revenue** to understand the e-commerce sales funnel, traffic acquisition quality, time-to-conversion velocities, and unit economics.
+This project analyzes end-to-end user behavior across **4,268 unique visitors** and **$76,037.93 in revenue** to understand the e-commerce sales funnel, traffic acquisition quality, time-to-conversion velocities, and unit economics.
 
 Using **Google BigQuery SQL**, the analysis identifies critical conversion drop-off points, evaluates marketing efficiency across acquisition channels (Organic, Email, Paid Ads, Social), and derives data-driven business recommendations to optimize marketing spend and checkout operations.
 
@@ -33,13 +33,13 @@ Using **Google BigQuery SQL**, the analysis identifies critical conversion drop-
 ### 1. Funnel Progression & Conversion Drop-Off
 | Funnel Stage | Unique Users | Step Conversion Rate | Drop-off Rate | Stage Share of Total |
 | :--- | :---: | :---: | :---: | :---: |
-| **Stage 1: Page View** | 4,291 | Baseline (100.0%) | — | 100.0% |
-| **Stage 2: Add to Cart** | 1,338 | **31.18%** | **68.82%** | 31.2% |
-| **Stage 3: Checkout Start** | 954 | **71.30%** | 28.70% | 22.2% |
-| **Stage 4: Payment Info** | 770 | **80.71%** | 19.29% | 17.9% |
-| **Stage 5: Purchase** | 709 | **92.08%** | 7.92% | **16.52% (Overall CR)** |
+| **Stage 1: Page View** | 4,268 | Baseline (100.0%) | — | 100.0% |
+| **Stage 2: Add to Cart** | 1,332 | **31.21%** | **68.79%** | 31.2% |
+| **Stage 3: Checkout Start** | 951 | **71.40%** | 28.60% | 22.3% |
+| **Stage 4: Payment Info** | 768 | **80.76%** | 19.24% | 18.0% |
+| **Stage 5: Purchase** | 708 | **92.19%** | 7.81% | **16.59% (Overall CR)** |
 
-> **Key Insight:** The primary bottleneck is **Stage 1 → Stage 2 (Cart Abandonment / Product Consideration)** where **68.8% of visitors bounce** without carting. Conversely, the bottom-of-funnel checkout flow is extremely healthy: **92.1%** of users who enter payment complete their purchase.
+> **Key Insight:** The primary bottleneck is **Stage 1 → Stage 2 (Cart Abandonment / Product Consideration)** where **68.8% of visitors bounce** without carting. Conversely, the bottom-of-funnel checkout flow is extremely healthy: **92.2%** of users who enter payment complete their purchase.
 
 ---
 
@@ -59,27 +59,28 @@ Using **Google BigQuery SQL**, the analysis identifies critical conversion drop-
 ### 3. Time-to-Conversion Velocity
 | Velocity Milestone | Average Duration (Minutes) | Interpretation |
 | :--- | :---: | :--- |
-| **View → Add to Cart** | **11.21 mins** | Rapid initial product evaluation |
-| **Add to Cart → Purchase** | **13.35 mins** | Decisive checkout behavior once carted |
-| **Total Journey (View → Purchase)** | **24.56 mins** | Overall impulse purchase cycle is under 25 minutes |
+| **View → Add to Cart** | **11.19 mins** | Rapid initial product evaluation |
+| **Add to Cart → Purchase** | **13.36 mins** | Decisive checkout behavior once carted |
+| **Total Journey (View → Purchase)** | **24.55 mins** | Overall impulse purchase cycle is under 25 minutes |
 
 ---
 
 ## 💡 Strategic Recommendations
 
 ### 1. UX & Checkout Optimization
-* **Maintain the Checkout Flow:** Conversion from `Checkout Start` to `Purchase` is exceptional (**~74.3%** cumulative from cart, **92.1%** from payment). Do not overhaul the checkout layout; prioritize preventing cart abandonment higher up the funnel.
+* **Maintain the Checkout Flow:** Conversion from `Checkout Start` to `Purchase` is exceptional (**74.4%** cumulative from checkout start, **92.2%** from payment). Do not overhaul the checkout layout; prioritize preventing cart abandonment higher up the funnel.
 * **Optimize Top-of-Funnel Consideration:** Deploy social proof badges, clear shipping estimates, and instant size/spec guides on product detail pages to lift the 31.2% View-to-Cart benchmark.
 
 ### 2. Marketing Budget & Channel Allocation
-* **Reallocate Social Media Ad Spend:** Social accounts for ~30% of traffic but converts at an anemic 6.7%. Pivot social campaigns away from generic "Traffic/Clicks" objectives toward **Lead Generation (Email Capture)** and **Retargeting**.
+* **Reallocate Social Media Ad Spend:** Social accounts for ~29.4% of traffic but converts at an anemic 6.70%. Pivot social campaigns away from generic "Traffic/Clicks" objectives toward **Lead Generation (Email Capture)** and **Retargeting**.
 * **Double Down on Email Infrastructure:** Email yields our highest RPV ($34.14). Implement high-converting welcome series, browse-abandonment automations, and targeted VIP promotions.
 * **Bridge Social Traffic to Email:** Introduce targeted 10% welcome discount popups specifically for incoming Social referrals to convert transient traffic into high-converting email subscribers.
 
 ### 3. Financial & CAC Guardrails
 * **Audit Acquisition Cost Against Channel Unit Economics:**
-  * Average Order Value across channels is **~$107 – $115**.
+  * Average Order Value across channels ranges from **$100.60 to $115.48** (Blended: **$107.40**).
   * Social visitors only yield **$7.74 RPV**. If blended Social CAC exceeds $7.74 per click/session or ~$35 per customer, acquisitions on social run at a net loss.
-  * Cap paid ad acquisition limits strictly below target margin thresholds.
+  * Cap paid ad acquisition limits strictly below target margin thresholds ($22.49 RPV ceiling).
+
 
 ---
