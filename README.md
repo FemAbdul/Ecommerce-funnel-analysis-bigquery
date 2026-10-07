@@ -33,7 +33,7 @@ This project uses **BigQuery SQL** on the store's event log to answer four quest
 
 ## 🛠️ SQL Techniques Used
 
-Full queries are in [`Funnel_Analysis.sql`](Funnel_Analysis.sql): CTEs, `COUNT(DISTINCT CASE WHEN ...)` funnel stages, a dynamic 30-day window anchored to `MAX(event_date)`, conversion-rate calculations, `GROUP BY` channel analysis, and `TIMESTAMP_DIFF` for time-to-conversion.
+Full queries are in [`Funnel_Analysis.sql`](sql/Funnel_Analysis.sql): CTEs, `COUNT(DISTINCT CASE WHEN ...)` funnel stages, a dynamic 30-day window anchored to `MAX(event_date)`, conversion-rate calculations, `GROUP BY` channel analysis, and `TIMESTAMP_DIFF` for time-to-conversion.
 
 ---
 
