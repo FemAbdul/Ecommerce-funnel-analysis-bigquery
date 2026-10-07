@@ -18,7 +18,7 @@ This project uses **BigQuery SQL** on the store's event log to answer four quest
 ---
 
 ## 🗂️ Dataset & Scope
-* **Source table:** `User_data.user_events` (Google BigQuery), also provided as `user_events.csv`
+* **Source table:** `User_data.user_events` (Google BigQuery)
 * **Size:** 9,381 events from 5,000 users (IDs 1001–6000), 6 products, spanning 30 Dec 2025 – 3 Feb 2026
 * **Analysis window:** the last 30 days, anchored to `MAX(event_date)` (4 Jan 2026 – 3 Feb 2026). This covers 4,268 of the 5,000 users.
 * **Nature of the data:** a simulated event log, not live store data. Each user has exactly one `page_view`, one traffic source, and at most one order.
